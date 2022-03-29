@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Change content of element notes</title>
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -20,7 +25,7 @@
                 </div>
             </div>
         <button name="clear"> Clear</button>
-        <p></p>
+        <p class="hidden"></p>
     </div>
 </div>
 </div>
@@ -35,6 +40,11 @@
         let first = firstName.value;
     let last = lastName.value;
     let fullName = `Hello ${first} ${last}!`;
+    if (fullName.length>1){
+        full.classList.remove('hidden')
+    } else{
+        full.classList.add('hidden')
+    }
     full.textContent = fullName;
     });
 
@@ -50,6 +60,18 @@
         lastName.value=" ";
         full.textContext=" ";
     })
+    function nameCreator(){
+        let first= firstName.value;
+        let last = lastName.value;
+        let fullName= `${first} ${last}`;
+        if (fullName.length>1){
+            full.classlist.remove('hidden')
+        } else{
+            full.classList.add('hidden')
+        }
+        full.textContent = `Hello ${fullName}!`;
+    }
 </script>
+
 </body>
 </html>
