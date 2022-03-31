@@ -28,6 +28,7 @@
         <p></p>
 </div>
 </div>
+</div>
     <script>
         const a = document.getElementById('a');
         const b = document.getElementById('b');
@@ -51,9 +52,15 @@
             let sideB = +b.value;
             let sideC = +c.value;
 
-            if (checkIsTri(sideA, sideB, sideC)){
-                
+            if (!checkIsValid(sideA) || !checkIsValid(sideB) || !checkIsValid(sideC)){
+                ans.textContent = 'Invalid inputs';
+                return;
             }
+            if (checkIsTri(sideA, sideB, sideC)){
+              ans.textContent = 'yes, this is a valid triangle.'
+                return;
+            }
+            ans.textContent = 'inputs do NOT create a valid triangle'
         })
             </script>
 </html>
