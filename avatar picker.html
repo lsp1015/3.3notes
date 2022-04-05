@@ -1,46 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>color picker!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur.</p>
         <div class="row">
-            <h3>background</h3>
-            <input type="color" id="bg" value="#FFFFFF">
+            <h3>AVATAR CHOICE</h3>
+            <button id="1">AVATAR 1</button>
+            <button id="2">AVATAR 2</button>
+            <button id="3">AVATAR 3</button>
+            <button id="4">AVATAR 4</button>
+            <button id="5">AVATAR 5</button>
+            <button id="6">AVATAR 6</button>
         </div>
-        <div class="row">
-            <h3>text</h3>
-            <input type="color" id="txt">
-        </div>
-        <button id="clear">CLEAR</button>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOxSS-sAygvA0cuD8YNoCqs5ZJUt3KmjHa0g&usqp=CAU">
     </div>
 </div>
+</div>
 <script>
-    const content = document.querySelector('.content');
-    const bg = document.getElementById('bg');
-    const txt = document.getElementById('txt');
-    const clear= document.getElementById('clear');
+    const picture = document.querySelector('img');
+    const a = document.getElementById('1');
+    const b = document.getElementById('2');
+    const c = document.getElementById('3');
+    const d = document.getElementById('4');
+    const e = document.getElementById('5');
+    const f = document.getElementById('6');
 
-    bg.addEventListener('change', function(e){
-        content.style.backgroundColor = e.target.value;
+    const clearButton = document.getElementById('clear');
+
+    a.addEventListener('click', function(e){
+        console.log('abc')
+        picture.src="https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
     });
-    txt.addEventListener('change', function(e){
-        content.style.color = e.target.value;
+    b.addEventListener('click', function(e){
+        picture.src="data:image/jpeg;base64,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"
     });
-    clear.addEventListener('click', function(e){
-        content.style.backgroundColor = 'white';
-        bg.value = '#FFFFFF'
-        content.style.color = 'black';
-        txt.value = '#000000'
+    c.addEventListener('click', function(e){
+        picture.src="https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
+    });
+    d.addEventListener('click', function(e){
+        picture.src="https://static.vecteezy.com/system/resources/thumbnails/001/921/779/small_2x/beautiful-woman-blonde-hair-in-frame-circular-avatar-character-free-vector.jpg"
+    });
+    e.addEventListener('click', function(e){
+        picture.src="https://static.vecteezy.com/system/resources/thumbnails/002/002/263/small_2x/black-man-with-beard-avatar-character-free-vector.jpg"
+    });
+    f.addEventListener('click', function(e){
+        picture.src="https://static.vecteezy.com/system/resources/thumbnails/001/921/774/small_2x/beautiful-woman-red-hair-in-frame-circular-avatar-character-free-vector.jpg"
     });
 </script>
 </body>
