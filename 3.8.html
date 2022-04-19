@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <h3>Hello</h3>
+    <p>hiiiiiiii</p>
+  </div>
+</div>
+<script>
+  const content=document.querySelector('.content');
+  content.innerHTML = '<h1> HIIIII</h1><h4> nooooooo</h4>';
+
+  const no=document.createElement('h1');
+  no.innerHTML = 'noo'
+  content.appendChild(no);
+</script>
+</body>
+</html>
