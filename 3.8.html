@@ -16,9 +16,22 @@
   const content=document.querySelector('.content');
   content.innerHTML = '<h1> HIIIII</h1><h4> nooooooo</h4>';
 
+  const food = document.createElement('h1');
+  food.innnerHTML = 'I love pizza';
+  content.insertAdjacentElement('afterbegin', food);
+
   const no=document.createElement('h1');
+  const yes=document.createElement('h1');
+  const maybe=document.createElement('h1');
+  const sure=document.createElement('h1');
   no.innerHTML = 'noo'
+  yes.innerHTML = 'yess'
+  maybe.innerHTML = 'maybee'
+  sure.innerHTML = 'suree'
   content.appendChild(no);
+  content.appendChild(yes);
+  content.appendChild(maybe);
+  content.appendChild(sure);
 </script>
 </body>
 </html>
