@@ -14,11 +14,11 @@
 </div>
 <script>
   const content=document.querySelector('.content');
-  content.innerHTML = '<h1> HIIIII</h1><h4> nooooooo</h4>';
+  content.innerHTML = '<h1 class="gone"> HIIIII</h1><h4> nooooooo</h4>';
 
   const food = document.createElement('h1');
   food.innnerHTML = 'I love pizza';
-  content.insertAdjacentElement('afterbegin', food);
+  content.insertAdjacentElement('afterend', food);
 
   const no=document.createElement('h1');
   const yes=document.createElement('h1');
@@ -32,6 +32,10 @@
   content.appendChild(yes);
   content.appendChild(maybe);
   content.appendChild(sure);
+
+const unwantedElement = document.querySelector('.gone');
+unwantedElement.remove();
+
 </script>
 </body>
 </html>
