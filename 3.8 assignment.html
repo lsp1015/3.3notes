@@ -2,70 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Title!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <div class="content">
-        <h1> say hi </h1>
+        <h1>list</h1>
         <div class="row">
             <div>
-                <label for="first"> First Name</label>
-                <input type="text" id="first" name="first_name" placeholder="Jane">
-            </div>
-            <div>
-                <label for="last"> Last Name</label>
-                <input type="text" id="last" name=last_name" placeholder="Doe">
+                <label for="first"> item</label>
+                <input type="text" id="first" name="first_name">
             </div>
         </div>
-        <button name="hi"> say hello</button>
-        <p class="hidden"></p>
+        <button name="add">Add item</button>
+        <ul></ul>
     </div>
 </div>
-</div>
-<script>
-    const firstName = document.getElementById('first');
-    const lastName = document.getElementById('last');
-    const full = document.querySelector('p');
+    <script>
+        addButton=document.querySelector('button');
+        const text=document.getElementById('first');
+        const myList = document.querySelector('ul');
+        function addItem(){
 
-    const hiButton= document.querySelector('[name="hi"]');
 
-    firstName.addEventListener('change', function(e){
-        let first = firstName.value;
-        let last = lastName.value;
-        let fullName = `Hello ${first} ${last}!`;
-        if (fullName.length>1){
-            full.classList.remove('hidden')
-        } else{
-            full.classList.add('hidden')
-        }
-        full.textContent = fullName;
+        let newElement = document.createElement('li');
+        newElement.innerHTML=text.value;
+        newElement.addEventListener('click', function(e){
+
+            newElement.remove();
     });
+        myList.appendChild(newElement)
 
-    lastName.addEventListener('change', function(e){
-        let first = firstName.value;
-        let last = lastName.value;
-        let fullName = `Hello ${first} ${last}!`;
-        full.textContent = fullName;
-    });
-
-    hiButton.addEventListener('click', function(e){
-        firstName.value= ${first};
-        lastName.value=${last);
-
-    })
-    function nameCreator(){
-        let first= firstName.value;
-        let last = lastName.value;
-        let fullName= `${first} ${last}`;
-        if (fullName.length>1){
-            full.classlist.remove('hidden')
-        } else{
-            full.classList.add('hidden')
-        }
-        full.textContent = `Hello ${fullName}!`;
-    }
+    };
+        addButton.addEventListener('click', addItem);
 </script>
 
 </body>
