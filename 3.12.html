@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <button id="trigger">Click me!</button>
+    </div>
+    <button id="interval">repeat</button>
+    <button id="cancel"> cancel repeat</button>
+</div>
+
+<script>
+    const myButton = document.getElementById('trigger');
+
+    const repeatButton = document.getElementById('interval');
+const cancelButton = document.getElementById('cancel');
+let interval;
+    myButton.addEventListener('click', function(){
+
+        setTimeout(function(){
+            console.log('I was clicked on 1 second ago.')
+        }, 1000);
+
+
+        console.log('happens right away');
+    })
+    repeatButton.addEventListener('click', function(){
+        if(!interval){
+            interval = setInterval(function(){
+            console.log('i happen every second.')
+        }, 1000);
+    });
+
+    cancelButton.addEventListener('click', function(){
+        if(interval){
+           clearInterval(interval);
+           interval=null;
+        }
+    })
+</script>
+</body>
+</html>
