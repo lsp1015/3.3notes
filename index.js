@@ -17,7 +17,12 @@ cardList.addEventListener('click', function(e){
         return
     }
     e.target.remove();
-})
+    let children = cardList.children;
+    if(children.length < 1){
+        clearInterval(interval);
+    }
+
+});
 
 function addCard(value){
     let card = document.createElement( 'div');
