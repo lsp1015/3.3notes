@@ -1,10 +1,13 @@
 const cardList = document.querySelector( '.cardList');
+const pointLabel = document.querySelector('.pointLabel')
+
+let points=0;
 
 buildBoard();
 
 let interval = setInterval(function(){
     addCard(cardList.children.length + 1)
-},2000);
+},1000);
 
 cardList.addEventListener('click', function(e){
     console.log(e.target);
@@ -14,14 +17,17 @@ cardList.addEventListener('click', function(e){
     if (e.target.classList.contains('active')){
         e.target.classList.remove('active');
         e.target.classList.add('inactive');
+        points++;
+        pointLabel.textContent=points;
         return
     }
     e.target.remove();
+    points+=2;
+    pointLabel.textContent=points;
     let children = cardList.children;
     if(children.length < 1){
         clearInterval(interval);
     }
-
 });
 
 function addCard(value){
@@ -37,3 +43,4 @@ function buildBoard(){
         addCard('starter');
     }
 }
+
